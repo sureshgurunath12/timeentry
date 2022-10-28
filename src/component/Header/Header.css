@@ -1,0 +1,212 @@
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  text-align: center;
+  height: 90px;
+  /*background: linear-gradient(180deg, #fff 85%, transparent);*/
+  background-color: #fff;
+}
+header .logo .logo-mini {
+  padding-left: 15px;
+}
+
+.sticky-header {
+  background: #eee7d9;
+  font-size: 14px;
+  padding: 5px;
+  font-family: "graphikregular";
+}
+.sticky-header span {
+  font-family: "graphikmedium";
+}
+header .logoContainer {
+  padding: 0px 20px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+header .navContainer {
+  display: flex;
+  justify-content: center;
+  font-family: "graphikmedium";
+  color: #b4975a;
+  font-size: 14px;
+}
+header nav {
+  display: flex;
+  width: 100%;
+}
+header .navigation ul.parent {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+header .navigation ul.parent li {
+  list-style-type: none;
+  text-transform: uppercase;
+  font-family: "graphikregular";
+  font-size: 14px;
+  letter-spacing: 2px;
+  height: 60px;
+}
+header .navigation ul.parent li.news-letter {
+  display: flex;
+  place-items: center;
+  flex-flow: column;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+header .navigation ul.parent li.news-letter span {
+  font-size: 11px;
+}
+header .navigation ul.parent li a {
+  text-decoration: none;
+  display: block;
+  padding: 19px 30px 18px;
+  color: #b4975a;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+ul.dropdown-menu {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  width: 188px;
+  -webkit-box-shadow: 0 2px 4px 0 rgb(0 0 0 / 15%);
+  -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 15%);
+}
+header .navigation ul.dropdown-menu li {
+  font-size: 12px;
+  height: auto;
+}
+header .navigation ul.dropdown-menu li a {
+  padding: 8px 20px 8px;
+}
+header .navigation ul.parent li a.active,
+header .navigation ul.parent li a:hover {
+  background-color: #efe8dae6;
+  color: #000;
+}
+
+header .logo {
+  height: 58px;
+  display: flex;
+  place-items: center;
+}
+header .logo img {
+  width: 190px;
+}
+header .nav-bar {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+header .carousel-indicators {
+  z-index: 1 !important;
+}
+header button.register {
+  outline: none;
+  border: none;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #eee7d9;
+  font-size: 12px;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+}
+header button.register:hover {
+  background-color: #c0953e;
+  color: #fff;
+}
+.v-center {
+  display: flex;
+  place-items: center;
+}
+@media (max-width: 1200px) {
+  header .navContainer {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    display: none;
+    animation: navBar 1s ease-in-out forwards;
+    z-index: 10;
+  }
+  header .navContainer.active {
+    display: block;
+    border-top: 1px solid #f8efdd;
+  }
+  header .navigation ul {
+    display: block;
+    width: 100%;
+  }
+  header .nav-bar {
+    display: flex;
+  }
+  header .navigation ul li {
+    border-bottom: 1px solid #f8efdd;
+  }
+  header .navigation ul.parent {
+    display: block;
+  }
+  header .navigation ul {
+    display: none;
+  }
+  .news-letter {
+    display: none !important;
+  }
+}
+@keyframes navBar {
+  0% {
+    height: 0px;
+    opacity: 0;
+  }
+  100% {
+    height: 100vh;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .pdp {
+    margin-top: 96px;
+  }
+
+  header {
+    height: 90px;
+  }
+  header .logo {
+    height: 60px;
+  }
+  header .logo a {
+    height: 60px;
+  }
+  header .logo img {
+    height: 60px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 767px) {
+  .sticky-header {
+    font-size: 12px;
+  }
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}

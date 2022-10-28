@@ -1,0 +1,10 @@
+.login {
+  margin:10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.skin-blue .wrapper{
+  background-color:#fff;
+}
