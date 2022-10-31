@@ -26,22 +26,10 @@ export const PARSE_JAVASCRIPT_KEY = '';
 
 Parse.initialize(API_APP_ID, PARSE_JAVASCRIPT_KEY);
 Parse.serverURL = API_BASE_URL;
-// initializeParse(
-//     API_BASE_URL,
-//     API_APP_ID,
-//     ''
-// )
 
-// const user = Parse.User.logIn('kali', "kali")
-// // const user =  userLogin("kali", "kali");
-//  console.log(user)
 
 const currentUserParse =  Parse.User.current();
 console.log("currentUser >>>>",currentUserParse);
-
-//const currentAsyncObj = currentUser();
-
-//currentUserObj.then((data)=>{console.log("currentUserObj >>>>", data)})
 
 if (currentUserParse) {
 

@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Login.css";
+import "./Register.css";
 // Import Parse minified version
 import Parse from "parse/dist/parse.min.js";
 
-export const Login = () => {
+export const Register = () => {
   const navigate = useNavigate();
 
   // State variables
@@ -21,12 +21,6 @@ export const Login = () => {
     setCurrentUser(currentUser);
     return currentUser;
   };
-
-  const handleSignup = (event) => {
-    event.preventDefault();
-    navigate("/register");
-    window.location.reload(true);
-  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -88,7 +82,7 @@ export const Login = () => {
   //   })
   // }
   return (
-    <div className="login">
+    <div className="register">
       <section className="content">
         <div className="container-fluid">
           <div className="row">
@@ -121,9 +115,9 @@ export const Login = () => {
                     <button type="submit" className="btn btn-primary">
                       Submit
                     </button>
-                    <a href="javascript:void(0)" onClick={handleSignup} class="link-primary">
+                    <button type="submit" className="btn btn-primary">
                       Sign Up
-                    </a>
+                    </button>
                   </div>
                 </form>
               </div>
@@ -136,4 +130,4 @@ export const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

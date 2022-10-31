@@ -12,7 +12,7 @@ export default class Content extends Component {
                                 <div className="box-header with-border">
                                     <h3 className="box-title">Monthly Recap Report</h3>
                                 </div>
-                                <div className="box-body">
+                                {/* <div className="box-body">
                                     <div className="row">
                                         <div className="col-md-8">
                                             <p className="text-center">
@@ -31,7 +31,7 @@ export default class Content extends Component {
                                             </div>
                                         </div>    
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
