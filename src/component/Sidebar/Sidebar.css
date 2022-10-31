@@ -1,73 +1,69 @@
-.skin-blue .main-sidebar{
-    background-color:#CCC;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #949599;
-    font-weight: normal;
+.skin-blue .main-sidebar {
+  background-color: #ccc;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #949599;
+  font-weight: normal;
 }
-.skin-blue .main-sidebar .side-menu{
-    background-color:#EFEFEF;
-    padding-top: 10px !important;
-    padding-bottom: 30px !important;
-
+.skin-blue .main-sidebar .side-menu {
+  background-color: #efefef;
+  padding-top: 10px !important;
+  padding-bottom: 30px !important;
 }
 .skin-blue .header {
-    place-items: center;
-    margin-bottom: 8px;
-    margin-top: 8px;
+  place-items: center;
+  margin-bottom: 8px;
+  margin-top: 8px;
 }
-.skin-blue .main-header .navbar{
-    background-color: #D4D5D6;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.skin-blue .main-header .navbar {
+  background-color: #d4d5d6;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .skin-blue .main-sidebar .logo {
-    background-color: #0290dd;
+  background-color: #0290dd;
 }
 .main-sidebar {
-    position: fixed;
+  position: fixed;
+  width: 250px;
+  top: 0;
 }
 .main-sidebar .sidebar-sec {
-    margin-right: 0.1rem;
+  margin-right: 0.1rem;
 }
 
-.skin-blue .main-sidebar .sidebar-sec span, 
+.skin-blue .main-sidebar .sidebar-sec span,
 .skin-blue .header span {
-    margin-left: 20px;
-    margin-right: 1px;
+  margin-left: 20px;
+  margin-right: 1px;
 }
-
 
 .skin-blue .main-sidebar .sidebar-sec .side-menu li a {
-    overflow-x: hidden;
-    overflow-y: initial;
-    margin-bottom: 0;
-    margin-left: 20px;
-    margin-right: 0.1rem;
-    margin-top: 0;
+  overflow-x: hidden;
+  overflow-y: initial;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 10px 10px 10px 20px;
+  display: block;
 }
 .skin-blue .main-sidebar .sidebar-sec .side-menu li a:hover {
-    background-color: #0290dd;
-    color: #FFFFFF;
+  background-color: #0290dd;
+  color: #ffffff;
 }
 .skin-blue .main-sidebar .sidebar-sec .side-menu li a.active {
-    background-color: #0290dd;
-    color: #FFFFFF;
+  background-color: #0290dd;
+  color: #ffffff;
 }
 .skin-blue .main-sidebar .sidebar-sec .side-menu li {
-    height:45px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  height: 45px;
 }
 .skin-blue .main-sidebar .sidebar-sec .side-menu li:hover {
-    background-color: #0290dd;
-    color: #FFFFFF;
+  background-color: #0290dd;
+  color: #ffffff;
 }
 
-.main-sidebar .logo{
-    height: 58px;
-    display: flex;
-    place-items: center;
-    color: #fff;
-    font-size: 24px;
+.main-sidebar .logo {
+  height: 58px;
+  display: flex;
+  place-items: center;
+  color: #fff;
+  font-size: 24px;
 }
-
-

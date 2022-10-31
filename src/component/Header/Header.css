@@ -1,18 +1,28 @@
 header {
   position: fixed;
-  width: 100%;
+  width: calc(100% - 250px);
   top: 0;
   left: 0;
   z-index: 12;
   text-align: center;
   height: 90px;
-  /*background: linear-gradient(180deg, #fff 85%, transparent);*/
+  margin-left: 250px;
   background-color: #fff;
 }
-header .logo .logo-mini {
-  padding-left: 15px;
-}
 
+.main-header {
+  color: #fff;
+  background-color: #0290dd;
+}
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 17px 10px;
+}
+.header-section .logout {
+  cursor: pointer;
+  margin-left: 20px;
+}
 .sticky-header {
   background: #eee7d9;
   font-size: 14px;

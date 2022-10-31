@@ -2,15 +2,14 @@ import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 // Import Parse minified version
-import Parse from 'parse/dist/parse.min.js';
-
+import Parse from "parse/dist/parse.min.js";
 
 export const Login = () => {
   const navigate = useNavigate();
 
   // State variables
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [currentUser, setCurrentUser] = useState(null);
   const [authenticated, setauthenticated] = useState(
     localStorage.getItem(localStorage.getItem("authenticated") || false)
@@ -23,12 +22,11 @@ export const Login = () => {
     return currentUser;
   };
 
-  const handleSubmit = async (event) => { 
-
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     // Note that these values come from state variables that we've declared before
-    
+
     const usernameValue = username;
     const passwordValue = password;
     try {
@@ -36,20 +34,21 @@ export const Login = () => {
       // logIn returns the corresponding ParseUser object
       alert(
         `Success! User ${loggedInUser.get(
-          'username'
+          "username"
         )} has successfully signed in!`
       );
       // To verify that this is in fact the current user, `current` can be used
       const currentUser = await Parse.User.current();
       console.log(loggedInUser === currentUser);
       // Clear input fields
-      setUsername('');
-      setPassword('');
+      setUsername("");
+      setPassword("");
       // Update state variable holding current user
       getCurrentUser();
       if (loggedInUser === currentUser) {
         localStorage.setItem("authenticated", true);
         navigate("/dashboard");
+        window.location.reload(true);
       }
       return true;
     } catch (error) {
@@ -74,7 +73,7 @@ export const Login = () => {
     //     alert("not logged in")
     //   }
     // }
-  }
+  };
 
   // const handleChange = (event) => {
   //   setformValue({
@@ -84,55 +83,51 @@ export const Login = () => {
   // }
   return (
     <div className="login">
-    <section className="content">
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-12">
-            <div className="card card-primary">
-              <div className="card-header">
-                <h3 className="card-title">Login <small>Page</small></h3>
-              </div>
-             <form id="quickForm" onSubmit={handleSubmit}>
-                <div className="card-body">
-                  <div className="form-group">
-                    <label>Email address</label>
-                    <input name="email"
-                        placeholder="Enter email"
+      <section className="content">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="card card-primary">
+                <div className="card-header">
+                  <h3 className="card-title">Sign In</h3>
+                </div>
+                <form id="quickForm" onSubmit={handleSubmit}>
+                  <div className="card-body">
+                    <div className="form-group">
+                      <input
+                        name="email"
+                        placeholder="Enter Email"
                         value={username}
                         onChange={(event) => setUsername(event.target.value)}
-                    />
-                   </div>
-                  <div className="form-group">
-                    <label>Password</label>
-                    <input
-                      type="password"
-                      name="password"
-                      placeholder="enter a password"
-                      value={password}
-                      onChange={(event) => setPassword(event.target.value)}
-                    />
-                   </div>
-                  <div className="form-group mb-0">
-                    <div className="custom-control custom-checkbox">
-                      <input type="checkbox" name="terms" className="custom-control-input" id="exampleCheck1"/>
-                      <label className="custom-control-label">I agree to the <a href="#">terms of service</a>.</label>
+                      />
+                    </div>
+                    <div className="form-group">
+                      <input
+                        type="password"
+                        name="password"
+                        placeholder="Enter a Password"
+                        value={password}
+                        onChange={(event) => setPassword(event.target.value)}
+                      />
                     </div>
                   </div>
-                </div>
-                <div className="card-footer">
-                  <button type="submit" className="btn btn-primary">Submit</button>
-                </div>
-              </form>
+                  <div className="login-footer">
+                    <button type="submit" className="btn btn-primary">
+                      Submit
+                    </button>
+                    <button type="submit" className="btn btn-primary">
+                      Sign Up
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
-            </div>
-          <div className="col-md-6">
-
+            <div className="col-md-6"></div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </div>
   );
-}
+};
 
 export default Login;
