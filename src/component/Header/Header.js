@@ -3,10 +3,15 @@ import "./Header.css";
 import React, { useState } from "react";
 import Parse from "parse/dist/parse.min.js";
 import { useNavigate } from "react-router-dom";
-
+import Modal from "../../component/Action/action.js";
+import "../../component/Action/action.css";
 export const Header = () => {
   const navigate = useNavigate();
   const [currentUser, setCurrentUser] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   const doUserLogOut = async function () {
     try {
       await Parse.User.logOut().then(() => {
@@ -48,7 +53,17 @@ export const Header = () => {
           </span>
         </div>
       </div>
-      <nav className="navbar navbar-static-top">Add</nav>
+      <nav className="navbar navbar-static-top">
+        <ul>
+          <li onClick={() => setIsModalOpen(!isModalOpen)}>Add</li>
+          <li>Save</li>
+          <li>Edit</li>
+          <li>Copy</li>
+          <li>Paste</li>
+          <li>Delete</li>
+        </ul>
+      </nav>
+      {isModalOpen && <Modal handler={toggleModal} />}
     </header>
   );
 };
