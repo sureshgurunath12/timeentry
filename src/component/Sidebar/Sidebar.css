@@ -18,6 +18,14 @@
   background-color: #d4d5d6;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.skin-blue .main-header .navbar ul {
+  display: flex;
+}
+.skin-blue .main-header .navbar ul li {
+  padding: 0px 10px;
+  list-style-type: none;
+  cursor: pointer;
+}
 .skin-blue .main-sidebar .logo {
   background-color: #0290dd;
 }
