@@ -31,38 +31,36 @@
 
 .model .model-container-data {
   width: 100%;
-  padding: 20px;
 }
 .model-header {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0px;
+  padding: 10px;
   border-bottom: 1px solid #c0953e;
   position: relative;
+  background-color: #007bff;
+  color: #FFFFFF;
 }
 .model .model-title {
   font-size: 18px;
   color: #c0953e;
-  font-family: "graphikmedium";
 }
 .model-close {
   font-size: 18px;
-  font-family: "graphikmedium";
   cursor: pointer;
   position: absolute;
-  top: -12px;
-  right: -12px;
+  top: 10px;
+  right: 15px;
 }
 .model-body {
   padding: 10px 10px;
-  min-height: 500px;
+  min-height: 300px;
   display: block;
   place-items: center;
   color: #000;
 }
 .news-title {
   font-size: 14px;
-  font-family: "graphikmedium";
   text-align: center;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -102,4 +100,18 @@
 .footer-gift .model-close {
   top: 5px;
   right: 10px;
+}
+
+input {
+  display: inline;
+}
+.form-group {
+  text-align: left;
+}
+.form-control {
+ 
+  display: inline;
+}
+label:not(.form-check-label):not(.custom-file-label) {
+  text-align: left;
 }
