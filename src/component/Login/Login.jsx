@@ -26,7 +26,7 @@ export const Login = () => {
     event.preventDefault();
     navigate("/register");
     window.location.reload(true);
-  }
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -94,20 +94,21 @@ export const Login = () => {
           <div className="row">
             <div className="col-md-12">
               <div className="card card-primary">
-                <div className="card-header">
-                  <h3 className="card-title">Sign In</h3>
-                </div>
+                <div className="title">KONAMI</div>
                 <form id="quickForm" onSubmit={handleSubmit}>
                   <div className="card-body">
+                    <div>Login</div>
                     <div className="form-group">
+                      <label>Username</label>
                       <input
                         name="email"
-                        placeholder="Enter Email"
+                        placeholder="Enter Username"
                         value={username}
                         onChange={(event) => setUsername(event.target.value)}
                       />
                     </div>
                     <div className="form-group">
+                      <label>Password</label>
                       <input
                         type="password"
                         name="password"
@@ -117,14 +118,9 @@ export const Login = () => {
                       />
                     </div>
                   </div>
-                  <div className="login-footer">
-                    <button type="submit" className="btn btn-primary">
-                      Submit
-                    </button>
-                    <a href="javascript:void(0)" onClick={handleSignup} class="link-primary">
-                      Sign Up
-                    </a>
-                  </div>
+                  <button type="submit" className="btn btn-primary">
+                    Submit
+                  </button>
                 </form>
               </div>
             </div>
