@@ -7,4 +7,5 @@ export { default as Register } from "../pages/Register";
 export { default as Reports } from "../pages/Reports";
 export { default as Users } from "../pages/Users";
 export { default as Projects } from "../pages/Projects";
+export { default as ProjectsTree } from "../pages/ProjectsTree";
 

@@ -1,11 +1,15 @@
 // Header.js
 import "./Header.css";
 import React, { useState } from "react";
-import Parse from "parse/dist/parse.min.js";
+import { useHistory ,useLocation } from 'react-router-dom';
+import Parse from "api/config";
 import { useNavigate } from "react-router-dom";
 import Modal from "../../component/Action/action.js";
 import "../../component/Action/action.css";
+import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
+
 export const Header = () => {
+
   const navigate = useNavigate();
   const [currentUser, setCurrentUser] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -42,6 +46,17 @@ export const Header = () => {
     return currentUser;
   };
 
+  // Function that will return current user and also update current username
+  const location = useLocation()
+  console.log(location)
+  const deleteData = async function () {
+
+    if(location.pathname === "/projects") {
+      console.log("project delect >>>")
+    }
+  }
+
+
   return (
     <header className="main-header">
       <div className="header-section">
@@ -53,17 +68,17 @@ export const Header = () => {
           </span>
         </div>
       </div>
-      <nav className="navbar navbar-static-top">
+      {/* <nav className="navbar navbar-static-top">
         <ul>
           <li onClick={() => setIsModalOpen(!isModalOpen)}>Add</li>
           <li>Save</li>
           <li>Edit</li>
           <li>Copy</li>
           <li>Paste</li>
-          <li>Delete</li>
+          <li onClick={() => deleteData()}>Delete</li>
         </ul>
       </nav>
-      {isModalOpen && <Modal handler={toggleModal} />}
+      {isModalOpen && <Modal handler={toggleModal} />} */}
     </header>
   );
 };

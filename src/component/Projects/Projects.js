@@ -1,8 +1,7 @@
 import { React, useEffect, useState } from "react";
 import "./Projects.css";
+import Parse from "api/config";
 
-import Parse from "parse/dist/parse.min.js";
-import { useNavigate } from "react-router-dom";
 
 export const Projects = () => {
   const [projectData, setProjectData] = useState(null);
@@ -78,10 +77,10 @@ export const Projects = () => {
                               day: "numeric",
                             };
                             const startDate = new Date(
-                              data.get("startDate")
+                              data.get("startdate")
                             ).toLocaleDateString("en-US", DATE_OPTIONS);
                             const endDate = new Date(
-                              data.get("endDate")
+                              data.get("enddate")
                             ).toLocaleDateString("en-US", DATE_OPTIONS);
 
                             return (
@@ -92,16 +91,16 @@ export const Projects = () => {
                                     class="checkbox"
                                   ></input>
                                 </td>
-                                <td>{data.get("projectName")}</td>
+                                <td>{data.get("projectname")}</td>
                                 <td>{startDate}</td>
                                 <td>{endDate}</td>
-                                <td>{data.get("totalEstHrs")}</td>
+                                <td>{data.get("totalestmhrs")}</td>
                                 <td>
                                   <span className="tag tag-success">
                                     {data.get("status")}
                                   </span>
                                 </td>
-                                <td>{data.get("description")}</td>
+                                <td>{data.get("projectdescription")}</td>
                               </tr>
                             );
                           })}

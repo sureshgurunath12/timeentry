@@ -1,33 +1,37 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState} from "react";
 // Import Parse minified version
-import Parse from "parse/dist/parse.min.js";
+import Parse from "api/config";
 
 function Registration({ handler }) {
 
   const [isSignInOpen, setSignInOpen] = useState(false);
   // State variables
   const [projectname, setProjectname] = useState("");
-  const [startdate, setStartdate] = useState("");
-  const [enddate, setEnddate] = useState("");
+  const [startdate, setStartdate] = useState(null);
+  const [enddate, setEnddate] = useState(null);
   const [totalesthrs, setTotalesthrs] = useState("");
   const [description, setDescription] = useState("");
+  const [status, setStatus] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const strDate = new Date(startdate);
+    const endDate = new Date(enddate);
+
     const ProjectsData = Parse.Object.extend("Projects");
     const projectsData = new ProjectsData();
-    projectsData.set("projectId",Math.random().toString(6).slice(2));
-    projectsData.set("projectName",projectname);
-    projectsData.set("startDate",startdate);
-    projectsData.set("endDate",enddate);
-    projectsData.set("totalEstHrs",parseInt(totalesthrs));
-    projectsData.set("description",description);
-    projectsData.set("status","Active");
+    projectsData.set("projectid",Math.random().toString(6).slice(2));
+    projectsData.set("projectname",projectname);
+    projectsData.set("startdate",new Date(startdate));
+    projectsData.set("enddate",new Date(enddate));
+    projectsData.set("totalestmhrs",parseInt(totalesthrs));
+    projectsData.set("projectdescription",description);
+    projectsData.set("status",status);
     projectsData.save()
     .then((projectsData) => {
       // Execute any logic that should take place after the object is saved.
       alert('New object created with objectId: ' + projectsData.id);
+      window.location.reload(true);
     }, (error) => {
       // Execute any logic that should take place if the save fails.
       // error is a Parse.Error with an error code and message.
@@ -58,7 +62,8 @@ function Registration({ handler }) {
                       <label for="exampleInputEmail1" class="col-sm-4 col-form-label">Project Name</label>
                       <div class="col-sm-8">
                         <input type="text" class="form-control" id="projectName" placeholder="Enter Project Name"
-                        onChange={(event) => setProjectname(event.target.value)} value={projectname} /></div>
+                        onChange={(event) => setProjectname(event.target.value)} value={projectname} />
+                      </div>
                     </div>
                    <div class="form-group row">
                       <label for="exampleInputPassword1" class="col-sm-4 col-form-label">Date & Time</label>
@@ -99,11 +104,21 @@ function Registration({ handler }) {
                       <label for="exampleInputPassword1" class="col-sm-4 col-form-label">Description</label>
                       <div class="col-sm-8"><textarea cols="40" rows="5" placeholder="Enter Description" onChange={(event) => setDescription(event.target.value)} value={description}></textarea></div>
                     </div>
+                    <div class="form-group row">
+                      <label for="exampleInputPassword1" class="col-sm-4 col-form-label">Status</label>
+                      <div class="col-sm-8">
+                        <select name="" onChange={(event) => setStatus(event.target.value)} value={description}>
+                            <option value="Active">Active</option>
+                            <option value="In-Active">In Active</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                      </div>
+                    </div>
                 </div>
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-info" onClick={handleSubmit}>Submit</button>
-                  <button type="submit" class="btn btn-default float-right" onClick={handleCancel}>Cancel</button>
+                  <button type="submit" class="btn btn-default float-right" onClick={handler}>Cancel</button>
                 </div>
               </form>
 

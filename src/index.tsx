@@ -2,8 +2,8 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import React from "react";
 import ReactDOM from "react-dom";
 import {currentUser} from './api/Auth'
-// import { initializeParse } from '@parse/react';
-import Parse from 'parse/dist/parse.min.js';
+import Parse from "api/config";
+//import Parse from 'parse/dist/parse.min.js';
 
 import "./index.css";
 
@@ -17,15 +17,16 @@ import {
   Reports,
   Users,
   Projects,
+  ProjectsTree
 } from "./component";
 // Import Parse minified version
 
-export const API_BASE_URL = 'https://parse.k12mate.com/parse';
-export const API_APP_ID = 'myappID';
-export const PARSE_JAVASCRIPT_KEY = '';
+// export const API_BASE_URL = 'https://parse.k12mate.com/parse';
+// export const API_APP_ID = 'myappID';
+// export const PARSE_JAVASCRIPT_KEY = '';
 
-Parse.initialize(API_APP_ID, PARSE_JAVASCRIPT_KEY);
-Parse.serverURL = API_BASE_URL;
+// Parse.initialize(API_APP_ID, PARSE_JAVASCRIPT_KEY);
+// Parse.serverURL = API_BASE_URL;
 
 
 const currentUserParse =  Parse.User.current();
@@ -47,6 +48,7 @@ if (currentUserParse) {
                     <Route path="/reports" element={<Reports />} />
                     <Route path="/users" element={<Users />} />
                     <Route path="/projects" element={<Projects />} />
+                    <Route path="/projectstree" element={<ProjectsTree />} />
               </Routes>
             </section>
           </div>

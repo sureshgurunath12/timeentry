@@ -5,7 +5,7 @@ header {
   left: 0;
   z-index: 12;
   text-align: center;
-  height: 90px;
+  /*height: 90px;*/
   margin-left: 250px;
   background-color: #fff;
 }

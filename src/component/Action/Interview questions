@@ -1,0 +1,43 @@
+const Foo = function(a) {
+    this.baz = function() {
+      return a;
+    };
+  
+    function bar(a) {
+      return a;
+    }
+  };
+  
+  Foo.prototype = {
+    biz: function(a) {
+      return this.a;
+    }
+  };
+  
+  const f = new Foo(7);
+  
+  // console.log(f.bar()); // 7 
+  // console.log(f.baz()); // 7
+  // console.log(f.biz()); // 7
+  
+  ////////////////////////////////////////////////////////////////////////////
+  /*
+  Please describe the behavior of the output below.
+  */
+  
+  var arr = [10, 12, 15, 21];
+  
+  for (var i = 0; i < arr.length; i++) {
+      function blah(i) {
+         setTimeout(function() {
+          console.log('Index: ' + i + ', element: ' + arr[i]);
+          }, 2000); 
+      }
+      
+      blah(i);
+  }
+  
+  /*
+  0, 10, after 2 seconds
+  1, 12 after 4 se
+  */

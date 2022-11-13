@@ -1,8 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-// Import Parse minified version
-import Parse from "parse/dist/parse.min.js";
+import Parse from "api/config";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -11,9 +10,9 @@ export const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [currentUser, setCurrentUser] = useState(null);
-  const [authenticated, setauthenticated] = useState(
-    localStorage.getItem(localStorage.getItem("authenticated") || false)
-  );
+  // const [authenticated, setauthenticated] = useState(
+  //   localStorage.getItem(localStorage.getItem("authenticated") || false)
+  // );
   // Function that will return current user and also update current username
   const getCurrentUser = async function () {
     const currentUser = await Parse.User.current();
@@ -22,11 +21,11 @@ export const Login = () => {
     return currentUser;
   };
 
-  const handleSignup = (event) => {
-    event.preventDefault();
-    navigate("/register");
-    window.location.reload(true);
-  };
+  // const handleSignup = (event) => {
+  //   event.preventDefault();
+  //   navigate("/register");
+  //   window.location.reload(true);
+  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();

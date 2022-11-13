@@ -66,6 +66,12 @@ export default class SideBar extends Component {
               </NavLink>
             </li>
             <li>
+              <NavLink exact activeClassName="active" to="/projectstree">
+                <i className="fa fa-files-o"></i>
+                <span>Project Tree</span>
+              </NavLink>
+            </li>
+            <li>
               <NavLink exact activeClassName="active" to="/users">
                 <i className="fa fa-th"></i>
                 <span>Users</span>

@@ -1,5 +1,12 @@
-.users {
+.projects {
   margin: 10px 10px;
+}
+.breadcrum {
+  font-weight: 100;
+  color:#dee2e6
+}
+.breadcrum a{
+  color:#0080ff
 }
 
 .checkbox {

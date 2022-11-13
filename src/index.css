@@ -43,8 +43,16 @@ ul {
   background-color: #fff;
 }
 
+.breadcrum {
+  font-weight: 100;
+  color:#dee2e6
+}
+.breadcrum a{
+  color:#0080ff
+}
+
 .skin-blue .content-header{
-  margin-top:100px;
+  margin-top:50px;
 }
 
 /* End: footer Arrow */
